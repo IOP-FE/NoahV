@@ -22,7 +22,6 @@ jobs:
           github_token: $GITHUB_TOKEN
           keep_history: true
           local_dir: doc/noahv
-script: echo 'ok'
 notifications:
   email:
     on_success: never
