@@ -28,7 +28,7 @@ npm install
 # build
 echo "npm build start"
 
-node scripts/build.js
+node $CUR_DIR/scripts/build.js
 
 
 if [ $? -ne 0 ]; then
@@ -36,9 +36,6 @@ if [ $? -ne 0 ]; then
     exit 1;
 fi
 echo "npm build success"
-
-rm -rf ../docs
-mv noahv ../docs
 
 # tar
 # cd output
