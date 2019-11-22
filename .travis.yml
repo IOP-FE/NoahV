@@ -16,6 +16,7 @@ jobs:
         script: cd doc && bash release.sh && ls
       - stage: deploy
         if: (branch = master) AND (commit_message =~ /(docs)/)
+        script: skip
         deploy:
           provider: pages
           skip_cleanup: true
