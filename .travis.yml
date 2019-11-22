@@ -11,12 +11,9 @@ jobs:
       - stage: test
         if: (commit_message !~ /(docs|chore)/)
         script: bash travis.sh
-      - stage: builddoc
-        if: (branch = master) AND (commit_message =~ /(docs)/)
-        script: cd doc && bash release.sh && ls
       - stage: deploy
         if: (branch = master) AND (commit_message =~ /(docs)/)
-        script: skip
+        script: cd doc && bash release.sh
         deploy:
           provider: pages
           skip_cleanup: true
